@@ -9,7 +9,7 @@ const bounds = [
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    style: 'mapbox://styles/mapbox/satellite-v9',
+    style: 'mapbox://styles/mapbox/dark-v11',
 	opacity: 0.75,
     center: [13.40,52.52],
     zoom: 12,
