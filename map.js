@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
 map.on('load', () => {
 	map.addSource('berlin17', {
 	type: 'geojson',
-	data: 'berlin_2017.geojson'
+	data: 'mapbox://saptarshi8485.51vzqq3g'
 	});
 	map.addLayer({
 		id: 'Berlin-2017',
@@ -36,7 +36,7 @@ map.on('load', () => {
 
 	map.addSource('berlin23', {
 		type: 'geojson',
-		data: 'berlin_2023.geojson'
+		data: 'mapbox://saptarshi8485.7hh2jw7m'
 	});
 	map.addLayer({
 		id: 'Berlin-2023',
@@ -53,7 +53,7 @@ map.on('load', () => {
 
 	map.addSource('diff', {
 		type: 'geojson',
-		data: 'difference.geojson'
+		data: 'mapbox://saptarshi8485.b49thgst'
 	});
 	map.addLayer({
 		id: 'Difference',
