@@ -18,7 +18,7 @@ const map = new mapboxgl.Map({
 
 map.on('load', () => {
 	map.addLayer({
-        id: 'berlin17',
+        id: 'Berlin-2017',
         type: 'fill',
         source: {
             type: 'vector',
@@ -31,39 +31,33 @@ map.on('load', () => {
         }
     });
 
-	map.addSource('berlin23', {
-		type: 'vector',
-		data: 'mapbox://saptarshi8485.7hh2jw7m'
-	});
 	map.addLayer({
-		id: 'Berlin-2023',
-		type: 'fill',
-		source: 'berlin23',
-		layout: {
-			'visibility': 'visible'
-		},
-		paint: {
-			'fill-color': '#ff0000', // red color fill
-	        'fill-opacity': 1.0
-		},
-	});
+        id: 'Berlin-2023',
+        type: 'fill',
+        source: {
+            type: 'vector',
+            url: 'mapbox://saptarshi8485.7hh2jw7m'
+        },
+        'source-layer': 'berlin_2023-9epvb7',
+        paint: {
+            'fill-color': 'green',
+            'fill-opacity': 0.5
+        }
+    });
 
-	map.addSource('diff', {
-		type: 'vector',
-		data: 'mapbox://saptarshi8485.b49thgst'
-	});
 	map.addLayer({
-		id: 'Difference',
-		type: 'fill',
-		source: 'diff',
-		layout: {
-			'visibility': 'visible'
-		},
-		paint: {
-			'fill-color': '#34e1d5', // cyan color fill
-	        'fill-opacity': 1.0
-		},
-	});
+        id: 'Difference',
+        type: 'fill',
+        source: {
+            type: 'vector',
+            url: 'mapbox://saptarshi8485.b49thgst'
+        },
+        'source-layer': 'difference-cg278n',
+        paint: {
+            'fill-color': 'green',
+            'fill-opacity': 0.5
+        }
+    });
 });
  
 // After the last frame rendered before the map enters an "idle" state.
