@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
 map.on('load', () => {
 	map.addSource('berlin17', {
 	type: 'geojson',
-	data: 'https://studio.mapbox.com/tilesets/saptarshi8485.7hh2jw7m'
+	data: 'mapbox://saptarshi8485.7hh2jw7m'
 	});
 	map.addLayer({
 		id: 'Berlin-2017',
