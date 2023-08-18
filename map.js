@@ -18,7 +18,7 @@ const map = new mapboxgl.Map({
 
 map.on('load', () => {
 	map.addSource('berlin17', {
-	type: 'geojson',
+	type: 'vector',
 	data: 'mapbox://saptarshi8485.51vzqq3g'
 	});
 	map.addLayer({
@@ -35,7 +35,7 @@ map.on('load', () => {
 	});
 
 	map.addSource('berlin23', {
-		type: 'geojson',
+		type: 'vector',
 		data: 'mapbox://saptarshi8485.7hh2jw7m'
 	});
 	map.addLayer({
@@ -52,7 +52,7 @@ map.on('load', () => {
 	});
 
 	map.addSource('diff', {
-		type: 'geojson',
+		type: 'vector',
 		data: 'mapbox://saptarshi8485.b49thgst'
 	});
 	map.addLayer({
