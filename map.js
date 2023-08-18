@@ -40,7 +40,7 @@ map.on('load', () => {
         },
         'source-layer': 'berlin_2023-9epvb7',
         paint: {
-            'fill-color': 'green',
+            'fill-color': 'red',
             'fill-opacity': 0.5
         }
     });
@@ -54,7 +54,7 @@ map.on('load', () => {
         },
         'source-layer': 'difference-cg278n',
         paint: {
-            'fill-color': 'green',
+            'fill-color': 'cyan',
             'fill-opacity': 0.5
         }
     });
