@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title>Displaying forest change in Papua New Guinea</title>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="map"></div>
+		<div class="map-overlay-container">
+			<div class="map-overlay">
+				<strong><h1>Legend</h1></strong>
+				<h3>
+				<p>
+					<span>
+						<svg width="10" height="10">
+							<rect width="10" height="10" style="fill:rgb(0,1010,0);stroke-width:3;stroke:rgb(0,0,0)" />
+						</svg>Berlin 2017
+					</span>
+				</p>
+				<p>
+					<span>
+						<svg width="10" height="10">
+							<rect width="10" height="10" style="fill:rgb(1010,0,0);stroke-width:3;stroke:rgb(0,0,0)" />
+						</svg>Berlin 2023
+					</span>
+				</p>
+				<p>
+					<span>
+						<svg width="10" height="10">
+							<rect width="10" height="10" style="fill:#34e1d5;stroke-width:3;stroke:rgb(0,0,0)" />
+						</svg>Difference
+					</span>
+				</p>
+			</h3>
+			</div>
+		</div>
+		<div id="menu"></div>
+		<script src="map.js"></script>
+	</body>
+</html>
