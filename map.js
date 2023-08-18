@@ -17,22 +17,19 @@ const map = new mapboxgl.Map({
 });
 
 map.on('load', () => {
-	map.addSource('berlin17', {
-	type: 'geojson',
-	data: 'mapbox://saptarshi8485.7hh2jw7m'
-	});
 	map.addLayer({
-		id: 'Berlin-2017',
-		type: 'fill',
-		source: 'berlin17',
-		layout: {
-			visibility: 'visible'
-		},
-		paint: {
-			'fill-color': '#00ff00', // green color fill
-	        'fill-opacity': 1.0
-		},
-	});
+        id: 'berlin17',
+        type: 'fill',
+        source: {
+            type: 'vector',
+            url: 'mapbox://saptarshi8485.51vzqq3g'
+        },
+        'source-layer': 'berlin_2017-ac58ot',
+        paint: {
+            'fill-color': 'green',
+            'fill-opacity': 0.5
+        }
+    });
 
 	map.addSource('berlin23', {
 		type: 'vector',
