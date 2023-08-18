@@ -10,6 +10,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/satellite-v9',
+	opacity: 0.75,
     center: [13.40,52.52],
     zoom: 12,
     projection: 'globe', // starting projection
