@@ -76,38 +76,38 @@ for (const id of toggleableLayerIds) {
 	// Skip layers that already have a button set up.
 	if (document.getElementById(id)) {
 	continue;
-}
+    }
  
-// Create a link.
-const link = document.createElement('a');
-link.id = id;
-link.href = '#';
-link.textContent = id;
-link.className = 'active';
- 
-// Show or hide layer when the toggle is clicked.
-link.onclick = function (e) {
-	const clickedLayer = this.textContent;
-	e.preventDefault();
-	e.stopPropagation();
- 
-	const visibility = map.getLayoutProperty(
-		clickedLayer,
-		'visibility'
-		);
- 
-	// Toggle layer visibility by changing the layout object's visibility property.
-	if (visibility === 'visible') {
-		map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-		this.className = '';
-	} else {
-		this.className = 'active';
-		map.setLayoutProperty(
-		clickedLayer,
-		'visibility',
-		'visible');
-		}
-	};
+    // Create a link.
+    const link = document.createElement('a');
+    link.id = id;
+    link.href = '#';
+    link.textContent = id;
+    link.className = 'active';
+    
+    // Show or hide layer when the toggle is clicked.
+    link.onclick = function (e) {
+        const clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+    
+        const visibility = map.getLayoutProperty(
+            clickedLayer,
+            'visibility'
+            );
+    
+        // Toggle layer visibility by changing the layout object's visibility property.
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(
+            clickedLayer,
+            'visibility',
+            'visible');
+            }
+        };
 	
     // Create a slider for opacity
     const opacitySlider = document.createElement('input');
@@ -121,7 +121,7 @@ link.onclick = function (e) {
     // Attach an event listener to the slider to update the layer opacity
     opacitySlider.addEventListener('input', (event) => {
         const newOpacity = parseFloat(event.target.value);
-        map.setPaintProperty(id.id, 'fill-opacity', newOpacity);
+        map.setPaintProperty(id, 'fill-opacity', newOpacity);
     });
     
 	const layers = document.getElementById('menu');
