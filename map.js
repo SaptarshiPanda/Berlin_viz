@@ -28,7 +28,7 @@ map.on('load', () => {
         'source-layer': 'berlin_2017-ac58ot',
         paint: {
             'fill-color': 'green',
-            'fill-opacity': 0.3
+            'fill-opacity': 0.5
         }
     });
 
@@ -42,7 +42,7 @@ map.on('load', () => {
         'source-layer': 'berlin_2023-9epvb7',
         paint: {
             'fill-color': 'red',
-            'fill-opacity': 0.3
+            'fill-opacity': 0.5
         }
     });
 
@@ -56,7 +56,7 @@ map.on('load', () => {
         'source-layer': 'difference-cg278n',
         paint: {
             'fill-color': 'cyan',
-            'fill-opacity': 0.3
+            'fill-opacity': 0.5
         }
     });
 });
@@ -108,8 +108,24 @@ link.onclick = function (e) {
 		'visible');
 		}
 	};
-	    
+	
+    // Create a slider for opacity
+    const opacitySlider = document.createElement('input');
+    opacitySlider.type = 'range';
+    opacitySlider.min = '0';
+    opacitySlider.max = '1';
+    opacitySlider.step = '0.1';
+    opacitySlider.value = 0.5; // Set the initial opacity value
+    opacitySlider.className = 'opacity-slider';
+    
+    // Attach an event listener to the slider to update the layer opacity
+    opacitySlider.addEventListener('input', (event) => {
+        const newOpacity = parseFloat(event.target.value);
+        map.setPaintProperty(layers.id, 'fill-opacity', newOpacity);
+    });
+    
 	const layers = document.getElementById('menu');
 		layers.appendChild(link);
+        layers.appendChild(opacitySlider);
 	}
 });

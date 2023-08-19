@@ -75,3 +75,9 @@ body {
 	font-size: 16;
 	margin: 0 0 10px;
 }
+
+.opacity-slider {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
