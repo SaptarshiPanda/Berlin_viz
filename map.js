@@ -9,7 +9,7 @@ const bounds = [
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    style: 'mapbox://styles/mapbox/dark-v11',
+    style: 'mapbox://styles/mapbox/satellite-v9',
 	opacity: 0.75,
     center: [13.40,52.52],
     zoom: 12,
@@ -28,7 +28,7 @@ map.on('load', () => {
         'source-layer': 'berlin_2017-ac58ot',
         paint: {
             'fill-color': 'green',
-            'fill-opacity': 0.5
+            'fill-opacity': 0.3
         }
     });
 
@@ -42,7 +42,7 @@ map.on('load', () => {
         'source-layer': 'berlin_2023-9epvb7',
         paint: {
             'fill-color': 'red',
-            'fill-opacity': 0.5
+            'fill-opacity': 0.3
         }
     });
 
@@ -56,7 +56,7 @@ map.on('load', () => {
         'source-layer': 'difference-cg278n',
         paint: {
             'fill-color': 'cyan',
-            'fill-opacity': 0.5
+            'fill-opacity': 0.3
         }
     });
 });
@@ -108,24 +108,8 @@ link.onclick = function (e) {
 		'visible');
 		}
 	};
-	
-    // Create a slider for opacity
-    const opacitySlider = document.createElement('input');
-    opacitySlider.type = 'range';
-    opacitySlider.min = '0';
-    opacitySlider.max = '1';
-    opacitySlider.step = '0.01';
-    opacitySlider.value = 0.5; // Set the initial opacity value
-    opacitySlider.className = 'opacity-slider';
-    
-    // Attach an event listener to the slider to update the layer opacity
-    opacitySlider.addEventListener('input', (event) => {
-        const newOpacity = parseFloat(event.target.value);
-        map.setPaintProperty(layers.id, 'fill-opacity', newOpacity);
-    });
-    
+	    
 	const layers = document.getElementById('menu');
 		layers.appendChild(link);
-        layers.appendChild(opacitySlider);
 	}
 });
