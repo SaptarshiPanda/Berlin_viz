@@ -55,7 +55,7 @@ map.on('load', () => {
         },
         'source-layer': 'difference-cg278n',
         paint: {
-            'fill-color': 'cyan',
+            'fill-color': 'rgb(202, 193, 18)',
             'fill-opacity': 0.5
         }
     });
@@ -85,6 +85,15 @@ for (const id of toggleableLayerIds) {
     link.textContent = id;
     link.className = 'active';
     
+    // Create a slider for opacity
+    const opacitySlider = document.createElement('input');
+    opacitySlider.type = 'range';
+    opacitySlider.min = '0';
+    opacitySlider.max = '1';
+    opacitySlider.step = '0.1';
+    opacitySlider.value = 0.5; // Set the initial opacity value
+    opacitySlider.className = 'opacity-slider';
+
     // Show or hide layer when the toggle is clicked.
     link.onclick = function (e) {
         const clickedLayer = this.textContent;
@@ -100,23 +109,16 @@ for (const id of toggleableLayerIds) {
         if (visibility === 'visible') {
             map.setLayoutProperty(clickedLayer, 'visibility', 'none');
             this.className = '';
+            opacitySlider.value = 0;
         } else {
             this.className = 'active';
             map.setLayoutProperty(
             clickedLayer,
             'visibility',
             'visible');
+            opacitySlider.value = 0.5;
             }
         };
-	
-    // Create a slider for opacity
-    const opacitySlider = document.createElement('input');
-    opacitySlider.type = 'range';
-    opacitySlider.min = '0';
-    opacitySlider.max = '1';
-    opacitySlider.step = '0.1';
-    opacitySlider.value = 0.5; // Set the initial opacity value
-    opacitySlider.className = 'opacity-slider';
     
     // Attach an event listener to the slider to update the layer opacity
     opacitySlider.addEventListener('input', (event) => {
