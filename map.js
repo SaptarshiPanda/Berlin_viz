@@ -108,8 +108,24 @@ link.onclick = function (e) {
 		'visible');
 		}
 	};
-	 
+	
+    // Create a slider for opacity
+    const opacitySlider = document.createElement('input');
+    opacitySlider.type = 'range';
+    opacitySlider.min = '0';
+    opacitySlider.max = '1';
+    opacitySlider.step = '0.01';
+    opacitySlider.value = layer.opacity; // Set the initial opacity value
+    opacitySlider.className = 'opacity-slider';
+    
+    // Attach an event listener to the slider to update the layer opacity
+    opacitySlider.addEventListener('input', (event) => {
+        const newOpacity = parseFloat(event.target.value);
+        map.setPaintProperty(layer.id, 'fill-opacity', newOpacity);
+    });
+    
 	const layers = document.getElementById('menu');
 		layers.appendChild(link);
+        layers.appendChild(opacitySlider);
 	}
 });
