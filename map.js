@@ -121,7 +121,7 @@ link.onclick = function (e) {
     // Attach an event listener to the slider to update the layer opacity
     opacitySlider.addEventListener('input', (event) => {
         const newOpacity = parseFloat(event.target.value);
-        map.setPaintProperty(layer.id, 'fill-opacity', newOpacity);
+        map.setPaintProperty(layers.id, 'fill-opacity', newOpacity);
     });
     
 	const layers = document.getElementById('menu');
