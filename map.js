@@ -126,6 +126,6 @@ link.onclick = function (e) {
     
 	const layers = document.getElementById('menu');
 		layers.appendChild(link);
-        layers.appendChild(opacitySlider);
+        link.appendChild(opacitySlider);
 	}
 });
