@@ -115,7 +115,7 @@ link.onclick = function (e) {
     opacitySlider.min = '0';
     opacitySlider.max = '1';
     opacitySlider.step = '0.01';
-    opacitySlider.value = layer.opacity; // Set the initial opacity value
+    opacitySlider.value = layers.opacity; // Set the initial opacity value
     opacitySlider.className = 'opacity-slider';
     
     // Attach an event listener to the slider to update the layer opacity
