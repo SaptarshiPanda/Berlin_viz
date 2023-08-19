@@ -121,11 +121,11 @@ link.onclick = function (e) {
     // Attach an event listener to the slider to update the layer opacity
     opacitySlider.addEventListener('input', (event) => {
         const newOpacity = parseFloat(event.target.value);
-        map.setPaintProperty(layers.id, 'fill-opacity', newOpacity);
+        map.setPaintProperty(id.id, 'fill-opacity', newOpacity);
     });
     
 	const layers = document.getElementById('menu');
 		layers.appendChild(link);
-        link.appendChild(opacitySlider);
+        layers.appendChild(opacitySlider);
 	}
 });
