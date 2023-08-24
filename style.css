@@ -50,6 +50,7 @@ body {
 }
 
 .map-overlay-container {
+	display: block;
 	position: absolute;
 	width: 20%;
 	height: 20%;
