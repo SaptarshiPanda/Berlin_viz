@@ -62,7 +62,7 @@ body {
 }
  
 .map-overlay {
-	display: inline;
+	display: inline-block;
 	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	border-radius: 3px;
 	padding: 10px;
